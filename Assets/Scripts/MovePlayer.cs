@@ -42,7 +42,7 @@ public class MovePlayer : MonoBehaviour
         // Apply Sprint
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            moveSpeed = 15f;
+            moveSpeed = 12f;
             animator.SetBool("IsRunning", true);
         }
         else
@@ -54,10 +54,9 @@ public class MovePlayer : MonoBehaviour
         // Jump Applied 
         if (Input.GetKey(KeyCode.Space) && isGrounded)
         {
-            Debug.Log("Real Jump");
-            animator.SetBool("IsJumping", true);
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
+            animator.SetBool("IsJumping", true);
         }
 
         // Apply Punch
